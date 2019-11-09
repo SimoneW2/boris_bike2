@@ -7,6 +7,7 @@ describe DockingStation do
   end
 
   it 'responds to release_bike' do
+    #docking_station = DockingStation.new ----this means subject below
     expect(subject).to respond_to :release_bike
   end
 
@@ -14,4 +15,9 @@ describe DockingStation do
 #   describe DockingStation do
 #   it { is_expected.to respond_to :release_bike }
 #   end
+  it 'responds to release_bike method' do
+    docking_station = DockingStation.new
+    bike = docking_station.release_bike
+  expect(bike).to respond_to :working?
+  end
 end
