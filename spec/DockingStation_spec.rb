@@ -38,7 +38,7 @@ describe DockingStation do
 
 #MY WAY
 #dock method was empty. so we start with just returning bike instance in the method
-  it 'should pass bike instance into the dock method' do
+  it 'should pass bike instance into the dock method to dock returned bike' do
     docking_station = DockingStation.new #Creates an instance of the docking station
     bike = docking_station.release_bike#Creates an instance of the bike
   expect(docking_station.dock(bike)).to eq bike
@@ -50,5 +50,13 @@ describe DockingStation do
 #     bike = Bike.new
 #     # We want to return the bike we dock
 #     expect(subject.dock(bike)).to eq bike
+#   end
+
+# #RECOMMENDED COURSE WALK THROUGH
+# it 'returns docked bikes' do
+#     bike = Bike.new
+#     subject.dock(bike)
+#     # Again, we need to return the bike we just docked
+#     expect(subject.bike).to eq bike
 #   end
 end
