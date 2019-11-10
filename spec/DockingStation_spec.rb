@@ -32,12 +32,23 @@ describe DockingStation do
     expect(docking_station).to respond_to(:dock).with(1).argument #we want the method dock to pass the bike instance as an argument dock(bike)
   end
 
-  #Checks a bike method is responsive to the docking_station but not sure why it's created
+  #Checks a bike method is responsive to the docking_station but not sure why it's created.
+  #Course walkthrough advice
   it { is_expected.to respond_to(:bike) }
 
-  # it 'should pass bike instance into the dock method' do
-  #   docking_station = DockingStation.new #Creates an instance of the docking station
-  #   bike = docking_station.release_bike#Creates an instance of the bike
-  # expect(docking_station.dock).to eq bike
-  # end
+#MY WAY
+#dock method was empty. so we start with just returning bike instance in the method
+  it 'should pass bike instance into the dock method' do
+    docking_station = DockingStation.new #Creates an instance of the docking station
+    bike = docking_station.release_bike#Creates an instance of the bike
+  expect(docking_station.dock(bike)).to eq bike
+  end
+
+# #COURSE WALK THROUGH FOR STEP ABOVE
+# # first, let's update our test for #dock
+#   it 'docks something' do
+#     bike = Bike.new
+#     # We want to return the bike we dock
+#     expect(subject.dock(bike)).to eq bike
+#   end
 end

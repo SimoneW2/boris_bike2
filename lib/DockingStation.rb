@@ -4,7 +4,7 @@ class DockingStation
     Bike.new #Now this method produces/returns a bike instance from the Bike class in the Bike.rb file
   end
   def dock(bike)
-  #  @bike = bike
+    @bike = bike
   end
   def bike
   end
